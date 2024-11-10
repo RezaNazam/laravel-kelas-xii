@@ -33,7 +33,29 @@
     <p><strong>Nama Genre:</strong> {{ $genre->name }}</p>
 	<a href="{{ route('genre.index') }}" class="btn btn-primary mt-3">Kembali</a>
 </div>
-	
+
+<!-- Menampilkan film berdasarkan genre -->
+<h2>Films in this Genre</h2>
+    <div class="row">
+        @foreach($films as $film)
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="{{ asset($film->poster) }}" class="card-img-top" alt="{{ $film->title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $film->title }}</h5>
+                    <p class="card-text">{{ $film->year }}</p>
+                    <a href="{{ route('movies.show', $film->id) }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    <div class="mt-4">
+        {{ $films->links() }} <!-- Pagination -->
+    </div>
+
+</div>
+
 @include('templates.component.footer')
 
 </body>
