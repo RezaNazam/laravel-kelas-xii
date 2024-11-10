@@ -27,12 +27,14 @@
 <!-- /w3l-medile-movies-grids -->
 
 <!-- untuk menampilkan detail dari genre -->
+
+<!-- untuk menampilkan detail dari genre -->
 <div class="container mt-5">
 	<h1 class="text-center mb-4">Detail Genre</h1>
     <p><strong>ID:</strong> {{ $genre->id }}</p>
     <p><strong>Nama Genre:</strong> {{ $genre->name }}</p>
 	<a href="{{ route('genre.index') }}" class="btn btn-primary mt-3">Kembali</a>
-</div>
+
 
 <!-- Menampilkan film berdasarkan genre -->
 <h2>Films in this Genre</h2>
@@ -60,3 +62,4 @@
 
 </body>
 </html>
+/html>
