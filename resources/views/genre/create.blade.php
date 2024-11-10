@@ -28,6 +28,33 @@
 </div>
 <!-- /w3l-medile-movies-grids -->
 
+<!-- untuk membuat inputan form penambahan genre (create) -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Tambah Genre Baru</h1>
+    <form action="{{ route('genre.store') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="name">Nama Genre</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+    </form>
+</div>
+
+<!-- //comedy-w3l-agileits -->
+<!-- footer masih bug naik keatas karena form terlalu sedikit -->
+<br>
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- footer -->
+@include('templates.component.footer')
+<!-- //footer -->
 
 <!-- NOTIF MASIH NGEBUG -->
 {{-- <!-- sweet alert2 js  -->
