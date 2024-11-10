@@ -25,7 +25,32 @@
 </div>
 <!-- /w3l-medile-movies-grids -->
 
-
+<!-- untuk membuat form pengeditan nama genre (edit) -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Edit Genre</h1>
+    <form action="{{ route('genre.update', $genre->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <div class="form-group">
+            <label for="name">Nama Genre</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ $genre->name }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Update</button>
+    </form>
+</div>
+<!-- //comedy-w3l-agileits -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- footer -->
+@include('templates.component.footer')
+<!-- //footer -->
 
 <!-- NOTIF MASIH BUG -->
 {{-- <!-- SweetAlert2 JavaScript -->
