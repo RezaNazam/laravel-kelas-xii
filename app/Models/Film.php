@@ -10,4 +10,10 @@ class Film extends Model
     use HasFactory;
     protected $table = 'films';
     protected $fillable = ['title','sinopsis','year','poster','genre_id'];
+
+    
+    public function genre()
+{
+    return $this->belongsTo(Genre::class, 'genre_id');
+}
 }

@@ -114,13 +114,19 @@ class FilmController extends Controller
 
     public function moviesByGenre($genre)
     {
-        //
-        $genreFilm = Genre::where('id', '=', $genre)->first();
-        $films = Film::select('id','title', 'poster','year')
-                ->where('genre_id', '=', $genre)
-                ->orderByDesc('year')
-                ->OrderBy('created_at', 'asc')
-                ->paginate(18);
-        return view('components/movies', compact('films','genreFilm'));
+        //mengambil genre berdasarkan parameter
+        $genreFilm = Genre::findOrFail($genre); // Menggunakan findOrFail agar error 404 jika genre tidak ditemukan
+        
+        // mengambil film berdasarkan genre id
+        $films = Film::where('genre_id', $genreFilm->id)
+                     ->orderByDesc('year')
+                     ->orderBy('created_at', 'asc')
+                     ->paginate(18); // menggunakan pagination untuk menampilkan beberapa film
+    
+        // Kirim data genre dan film ke view 'movies'
+        return view('components/movies', compact('films', 'genreFilm'));
     }
+
+    
+    
 }

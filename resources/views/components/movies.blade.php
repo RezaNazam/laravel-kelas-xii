@@ -9,10 +9,10 @@
           <div class="browse-agile-w3ls general-w3ls">
             <div class="tittle-head">
               @if ($genreFilm !== null)
-                      <h4 class="latest-text">Movies Of Genre {{ $genreFilm->name }}</h4>
-                    @else
-                      <h4 class="latest-text">List Of Movies</h4>
-                    @endif
+    <h4 class="latest-text">Movies Of Genre {{ $genreFilm->name }}</h4>
+@else
+    <h4 class="latest-text">List Of Movies</h4>
+@endif
               <div class="container">
                 <div class="agileits-single-top">
                   <ol class="breadcrumb">
