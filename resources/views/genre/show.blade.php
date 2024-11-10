@@ -25,11 +25,7 @@
 </div>
 
 <!-- /w3l-medile-movies-grids -->
-<div class="container mt-5">
-	<h1 class="text-center mb-4">Detail Genre</h1>
-    <p><strong>ID:</strong> {{ $genre->id }}</p>
-    <p><strong>Nama Genre:</strong> {{ $genre->name }}</p>
-	<a href="{{ route('genre.index') }}" class="btn btn-primary mt-3">Kembali</a>
+
 	
     
 
