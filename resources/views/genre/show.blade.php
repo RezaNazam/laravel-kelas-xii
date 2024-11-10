@@ -33,7 +33,8 @@
     <p><strong>Nama Genre:</strong> {{ $genre->name }}</p>
 	<a href="{{ route('genre.index') }}" class="btn btn-primary mt-3">Kembali</a>
 </div>
-	    
+	
+@include('templates.component.footer')
 
 </body>
 </html>
