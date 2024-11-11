@@ -29,12 +29,14 @@
 <!-- untuk menampilkan detail dari genre -->
 
 <!-- untuk menampilkan detail dari genre -->
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
 	<h1 class="text-center mb-4">Detail Genre</h1>
     <p><strong>ID:</strong> {{ $genre->id }}</p>
     <p><strong>Nama Genre:</strong> {{ $genre->name }}</p>
 	<a href="{{ route('genre.index') }}" class="btn btn-primary mt-3">Kembali</a>
 
+    <br>
+    <br>
 
 <!-- Menampilkan film berdasarkan genre -->
 <h2>Films in this Genre</h2>
@@ -52,14 +54,16 @@
         </div>
         @endforeach
     </div>
-    <div class="mt-4">
+    <div class="mt-5">
         {{ $films->links() }} <!-- Pagination -->
     </div>
 
 </div>
 
+<br>
+<br>
+
 @include('templates.component.footer')
 
 </body>
 </html>
-/html>

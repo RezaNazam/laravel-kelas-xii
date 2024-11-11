@@ -17,6 +17,7 @@ class GenreController extends Controller
         // Mengirim data genres ke view
         return view('genre.index', compact('genres'));
     }
+    
 
     // Menampilkan form untuk membuat genre baru
     public function create()

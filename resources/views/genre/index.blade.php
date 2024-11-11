@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('templates.component.head')
+<head>
+    @include('templates.component.head')
+</head>
 <body>
     @include('templates.component.header')
     @include('templates.component.login')
     @include('templates.component.navbar')
 
+
+    
     <div class="general_social_icons">
         <nav class="social">
             <ul>
@@ -49,11 +53,27 @@
         </table>
     </div>
     
-<!-- Menampilkan Pagination -->
-<div class="text-center">
-    {{ $genres->links() }}
-</div>
+    <!-- Menampilkan Pagination -->
+    <div class="text-center">
+        {{ $genres->links() }}
+    </div>
 
     @include('templates.component.footer')
+
+    <script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
+<script>
+	$(document).ready(function(){
+		$(".dropdown").hover(            
+			function() {
+				$('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+				$(this).toggleClass('open');        
+			},
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');       
+					}
+    );
+});
+</script>
 </body>
 </html>
